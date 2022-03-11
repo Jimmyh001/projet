@@ -20,7 +20,7 @@ namespace Machine_bonbon
         public static int GetSelection(int nbMaxBonbons =25)
         {
             int input=0;
-            Board.Print();
+            
             while (true)
             {
                 Console.Write("->");
@@ -35,15 +35,17 @@ namespace Machine_bonbon
                 }
                 
             }
-            //string messageb = Board.PadBoth()
             Board.Print(selection:input);
-            //Board.Print(selection:GetSelection(input));
             return input-1;
         }
 
-        /*public static int GetCandy(int input)
+        /*public static int[] GetCandy(int input)
         {
-            Board.Print(LoadCandies()candies[input]);
+            Data dataManager = new Data();
+            Candy[] candies = dataManager.LoadCandies();
+            input = candies[input];
+            return candies;
+
         }*/
         static void Main(string[] args)
         {
@@ -55,8 +57,10 @@ namespace Machine_bonbon
             //Board.Print(selection:input);
             //Candy[] candies = LoadCandies();
             //Candy[] candies = Data.LoadCandies();
+            Board.Print();
             int select = GetSelection();
-            Board.Print(candies[select].Name, selection:select);
+            //GetCandy(select);
+            Board.Print(candies[select].Name, selection:select+1);
             
 
 
