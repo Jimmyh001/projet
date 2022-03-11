@@ -38,7 +38,7 @@ namespace Machine_bonbon
             //string messageb = Board.PadBoth()
             Board.Print(selection:input);
             //Board.Print(selection:GetSelection(input));
-            return input;
+            return input-1;
         }
 
         /*public static int GetCandy(int input)
@@ -57,6 +57,7 @@ namespace Machine_bonbon
             //Candy[] candies = Data.LoadCandies();
             int select = GetSelection();
             Board.Print(candies[select].Name, selection:select);
+            
 
 
 
