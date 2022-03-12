@@ -89,20 +89,18 @@ namespace Machine_bonbon
             int input=0;
             do
             {
-                
                 coin = GetCoin(input);
                 sommeRecu = sommeRecu+coin;
                 Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
-                while (sommeRecu < bonbon.Price)
+                while (sommeRecu < bonbon.Price)//metre les exception comme else if en premier et ensuite a la fin traiter le while
                 {
-                    
-                    if (coin < bonbon.Price)
+                    if (sommeRecu < bonbon.Price && coin != 0)
                     {
                         coin = GetCoin(input);
                         sommeRecu = sommeRecu+coin;
                         Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
                     }
-                    else if (input == 0 && sommeRecu > 0)
+                    else if (coin == 0 || sommeRecu > 0)
                     {
                         sommeRecu = 0;
                         Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
