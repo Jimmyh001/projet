@@ -39,19 +39,16 @@ namespace Machine_bonbon
             return input-1;
         }
 
-        /*public static int[] GetCandy(int input)
+        public static Candy GetCandy(int input, Candy[] candies)
         {
-            Data dataManager = new Data();
-            Candy[] candies = dataManager.LoadCandies();
-            input = candies[input];
-            return candies;
+            return candies[input];
 
-        }*/
+        }
         static void Main(string[] args)
         {
             //LoadCandies();
-            Data dataManager = new Data();
-            Candy[] candies = dataManager.LoadCandies();
+            //LoadCandies();
+            Candy[] candies = LoadCandies();
             //int input = GetSelection();
             //candies = 
             //Board.Print(selection:input);
@@ -59,7 +56,8 @@ namespace Machine_bonbon
             //Candy[] candies = Data.LoadCandies();
             Board.Print();
             int select = GetSelection();
-            //GetCandy(select);
+            Candy bonbon = GetCandy(select, candies);
+            //Candy allo = GetCandy(select);
             Board.Print(candies[select].Name, selection:select+1);
             
 
