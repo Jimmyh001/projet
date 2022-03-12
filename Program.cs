@@ -45,16 +45,27 @@ namespace Machine_bonbon
         public static decimal GetCoin()
         {
             int input;
-            int[] choix = new int[6] {0, 1, 2, 3, 4, 5};
+            //int[] choix = new int[6] {0, 1, 2, 3, 4, 5};
             do
             {
-                Console.Write(
-                    $"[{choix[0]}] = Annuler\n[{choix[1]}] = 5c\n[{choix[2]}] = 10c\n[{choix[3]}] = 25c\n[{choix[4]}] = 1$\n[{choix[5]}] = 2$\n->");
+                Console.Write($"[0] = Annuler\n[1] = 5c\n[2] = 10c\n[3] = 25c\n[4] = 1$\n[5] = 2$\n->");
                 input = int.Parse(Console.ReadLine());
             } while (input < 0 || input > 5);
-            
-            
-            
+            switch(input)
+            {
+                case 0:
+                    return 0;
+                case 1:
+                    return 0.05m;
+                case 2:
+                    return 0.10m;
+                case 3:
+                    return 0.25m;
+                case 4:
+                    return 1.00m;
+                case 5:
+                    return 2.00m;
+            }
             return input;
         }
         static void Main(string[] args)
@@ -79,6 +90,10 @@ namespace Machine_bonbon
             }
             Console.WriteLine("Bravo!");
             decimal coin = GetCoin();
+            while (coin == 0)
+            {
+                
+            }
 
 
 
