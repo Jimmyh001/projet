@@ -17,10 +17,9 @@ namespace Machine_bonbon
             qu’on ne peut pas l’utiliser ailleurs sauf en créant une variable de type Data */
             return candies;
         }
-        public static int GetSelection(int nbMaxBonbons =25)
+        public static int GetSelection(int input=25)
         {
-            int input=0;
-            
+            Board.Print();
             while (true)
             {
                 Console.Write("->");
@@ -46,20 +45,25 @@ namespace Machine_bonbon
         }
         static void Main(string[] args)
         {
-            //LoadCandies();
-            //LoadCandies();
-            Candy[] candies = LoadCandies();
-            //int input = GetSelection();
-            //candies = 
-            //Board.Print(selection:input);
-            //Candy[] candies = LoadCandies();
-            //Candy[] candies = Data.LoadCandies();
-            Board.Print();
+            Candy[] candies = LoadCandies(); //Declaration d'un tableau de type Candy qui contient tous les donnees des bonbons fichier.data
             int select = GetSelection();
             Candy bonbon = GetCandy(select, candies);
-            //Candy allo = GetCandy(select);
-            //Board.Print(candies[select].Name, selection:select+1);
-            Board.Print(GetCandy(select, candies));
+            while (bonbon.Stock >= 0)
+            {
+                if (bonbon.Stock <= 0)
+                {
+                    Board.Print(candies[select].Name, selection:select+1, bonbon.Price);
+                    Console.WriteLine("Bonbon pas en stock");
+                    select = GetSelection();
+                    bonbon = GetCandy(select, candies);
+                }
+                else
+                {
+                    Board.Print(candies[select].Name, select+1, bonbon.Price);
+                    break;
+                }
+            }
+            Console.WriteLine("Bravo!");
 
 
 

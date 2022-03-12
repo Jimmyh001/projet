@@ -12,6 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../Laboratoire_prog/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d07e2a1f297ef941dc8ade95cc911591b9f71f176a6cbdb698ae23f9ac5a2/Decimal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dc79a2b85523c91ac7d6b384b806b4282481fb086daae78402ed1f2c7bc92/Console.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -26,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.50076336" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -61,7 +64,8 @@
       <updated>1647010337769</updated>
       <workItem from="1647010342802" duration="97000" />
       <workItem from="1647011558734" duration="4300000" />
-      <workItem from="1647018722053" duration="6543000" />
+      <workItem from="1647018722053" duration="7580000" />
+      <workItem from="1647092142813" duration="7216000" />
     </task>
     <servers />
   </component>
