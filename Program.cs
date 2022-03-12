@@ -19,7 +19,7 @@ namespace Machine_bonbon
         }
         public static int GetSelection(int input=25)
         {
-            Board.Print();
+            
             while (true)
             {
                 Console.Write("->");
@@ -37,24 +37,37 @@ namespace Machine_bonbon
             Board.Print(selection:input);
             return input-1;
         }
-
         public static Candy GetCandy(int input, Candy[] candies)
         {
             return candies[input];
 
         }
+        public static decimal GetCoin()
+        {
+            int input;
+            int[] choix = new int[6] {0, 1, 2, 3, 4, 5};
+            do
+            {
+                Console.Write(
+                    $"[{choix[0]}] = Annuler\n[{choix[1]}] = 5c\n[{choix[2]}] = 10c\n[{choix[3]}] = 25c\n[{choix[4]}] = 1$\n[{choix[5]}] = 2$\n->");
+                input = int.Parse(Console.ReadLine());
+            } while (input < 0 || input > 5);
+            
+            
+            
+            return input;
+        }
         static void Main(string[] args)
         {
             Candy[] candies = LoadCandies(); //Declaration d'un tableau de type Candy qui contient tous les donnees des bonbons fichier.data
+            Board.Print();
             int select = GetSelection();
             Candy bonbon = GetCandy(select, candies);
-<<<<<<< HEAD
             while (bonbon.Stock >= 0)
             {
-                if (bonbon.Stock <= 0)
+                if (bonbon.Stock == 0)
                 {
-                    Board.Print(candies[select].Name, selection:select+1, bonbon.Price);
-                    Console.WriteLine("Bonbon pas en stock");
+                    Board.Print(message:candies[select].Name + " VIDE", select+1, bonbon.Price);
                     select = GetSelection();
                     bonbon = GetCandy(select, candies);
                 }
@@ -65,20 +78,7 @@ namespace Machine_bonbon
                 }
             }
             Console.WriteLine("Bravo!");
-=======
-            //Candy allo = GetCandy(select);
-            //Board.Print(candies[select].Name, selection:select+1);
-            //Board.Print(candies[select].Name, selection:GetCandy(select,candies:));
-            Board.Print(candies[select].Name, selection:bonbon.Price);
-            
-            
-            
-            
-            
-            
-            
-            );
->>>>>>> GetCandy
+            decimal coin = GetCoin();
 
 
 
