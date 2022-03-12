@@ -58,8 +58,8 @@ namespace Machine_bonbon
             int select = GetSelection();
             Candy bonbon = GetCandy(select, candies);
             //Candy allo = GetCandy(select);
-            Board.Print(candies[select].Name, selection:select+1);
-            
+            //Board.Print(candies[select].Name, selection:select+1);
+            Board.Print(GetCandy(select, candies));
 
 
 
