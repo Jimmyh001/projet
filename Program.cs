@@ -42,15 +42,10 @@ namespace Machine_bonbon
             return candies[input];
 
         }
-        public static decimal GetCoin()
+        public static decimal GetCoin(int input)
         {
-            int input;
-            //int[] choix = new int[6] {0, 1, 2, 3, 4, 5};
-            do
-            {
-                Console.Write($"[0] = Annuler\n[1] = 5c\n[2] = 10c\n[3] = 25c\n[4] = 1$\n[5] = 2$\n->");
-                input = int.Parse(Console.ReadLine());
-            } while (input < 0 || input > 5);
+            Console.Write($"[0] = Annuler\n[1] = 5c\n[2] = 10c\n[3] = 25c\n[4] = 1$\n[5] = 2$\n->");
+            input = int.Parse(Console.ReadLine());
             switch(input)
             {
                 case 0:
@@ -89,11 +84,45 @@ namespace Machine_bonbon
                 }
             }
             Console.WriteLine("Bravo!");
-            decimal coin = GetCoin();
-            while (coin == 0)
+            decimal coin = 0, sommeRecu=0;
+            bool isCompleted =false, isCanceled;
+            int input=0;
+            do
             {
                 
-            }
+                coin = GetCoin(input);
+                sommeRecu = sommeRecu+coin;
+                Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                while (sommeRecu < bonbon.Price)
+                {
+                    
+                    if (coin < bonbon.Price)
+                    {
+                        coin = GetCoin(input);
+                        sommeRecu = sommeRecu+coin;
+                        Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                    }
+                    else if (input == 0 && sommeRecu > 0)
+                    {
+                        sommeRecu = 0;
+                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
+                    }
+                    else
+                    {
+                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
+                    }
+                    
+                    
+                }
+                //sommeRecu += coin;
+                //Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                
+            } while (input == 0 && isCompleted == true);
+            /*do
+            {
+                coin = GetCoin();
+                
+            } while (coin == 0);*/
 
 
 
