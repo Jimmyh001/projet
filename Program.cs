@@ -48,6 +48,7 @@ namespace Machine_bonbon
             Candy[] candies = LoadCandies(); //Declaration d'un tableau de type Candy qui contient tous les donnees des bonbons fichier.data
             int select = GetSelection();
             Candy bonbon = GetCandy(select, candies);
+<<<<<<< HEAD
             while (bonbon.Stock >= 0)
             {
                 if (bonbon.Stock <= 0)
@@ -64,6 +65,20 @@ namespace Machine_bonbon
                 }
             }
             Console.WriteLine("Bravo!");
+=======
+            //Candy allo = GetCandy(select);
+            //Board.Print(candies[select].Name, selection:select+1);
+            //Board.Print(candies[select].Name, selection:GetCandy(select,candies:));
+            Board.Print(candies[select].Name, selection:bonbon.Price);
+            
+            
+            
+            
+            
+            
+            
+            );
+>>>>>>> GetCandy
 
 
 
