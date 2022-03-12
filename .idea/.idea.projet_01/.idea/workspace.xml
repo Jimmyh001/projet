@@ -4,14 +4,28 @@
     <projectFile>Machine_bonbon.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f55520a6-5546-4c98-9868-b371addf1456" name="Changes" comment="" />
+    <list default="true" id="f55520a6-5546-4c98-9868-b371addf1456" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Machine_bonbon.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Machine_bonbon.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Machine_bonbon.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Machine_bonbon.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Machine_bonbon.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Machine_bonbon.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Laboratoire_prog/Program.cs" root0="SKIP_HIGHLIGHTING" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,6 +76,7 @@
       <workItem from="1647010342802" duration="97000" />
       <workItem from="1647011558734" duration="4300000" />
       <workItem from="1647018722053" duration="6543000" />
+      <workItem from="1647051504436" duration="1427000" />
     </task>
     <servers />
   </component>
