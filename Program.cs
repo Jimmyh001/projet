@@ -42,15 +42,16 @@ namespace Machine_bonbon
             return candies[input];
 
         }
-        public static decimal GetCoin(int input, int select, Candy bonbon)
+        public static decimal GetCoin(int input, int select, Candy bonbon, decimal sommeRecu)
         {
             do
             {
                 Console.Write($"[0] = Annuler\n[1] = 5c\n[2] = 10c\n[3] = 25c\n[4] = 1$\n[5] = 2$\n->");
                 input = int.Parse(Console.ReadLine());
+                Board.Print(bonbon.Name, select+1, bonbon.Price, received:sommeRecu);
             } while ((input < 0 || input > 5) && bonbon.Stock > 0);
             
-            Board.Print(bonbon.Name, select+1, bonbon.Price);
+            //Board.Print(bonbon.Name, select+1, bonbon.Price, received:sommeRecu);
             switch(input)
             {
                 case 0:
@@ -90,11 +91,51 @@ namespace Machine_bonbon
             }
             Console.WriteLine("Bravo!");
             decimal coin = 0, sommeRecu=0;
-            bool isCompleted =false, isCanceled;
+            bool isCompleted =true, isCanceled=true;
             int input=0;
-            do
+            //coin = GetCoin(input, select, bonbon, sommeRecu);
+            while (true)
             {
-                coin = GetCoin(input, select, bonbon);
+                coin = GetCoin(input, select, bonbon, sommeRecu);
+                sommeRecu = sommeRecu + coin;
+                Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
+                if (coin == 0)
+                {
+                    Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
+                    isCanceled = true;
+                    /*coin = GetCoin(input, select, bonbon, sommeRecu);
+                    sommeRecu = sommeRecu + coin;
+                    Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
+                    */
+                }
+                else if (sommeRecu < bonbon.Price)
+                {
+                    /*coin = GetCoin(input, select, bonbon, sommeRecu);
+                    sommeRecu = sommeRecu + coin;*/
+                    Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                    
+                }
+                else if (sommeRecu >= bonbon.Price)
+                {
+                    Board.Print("PRENNEZ VOTRE FRIANDISE...", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price), result:candies[select].Name);
+                    bonbon.Stock--;
+                    isCompleted = true;
+                    break;
+                }
+                /*else if (coin == 0)
+                {
+                    Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
+                    isCanceled = true;
+                }*/
+            }
+
+            Console.WriteLine("BRAVO");
+            Console.ReadKey()
+            
+            
+            /*do
+            {
+                coin = GetCoin(input, select, bonbon, sommeRecu);
                 sommeRecu = sommeRecu+coin;
                 //Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
                 //while (sommeRecu <= bonbon.Price)//metre les exception comme else if en premier et ensuite a la fin traiter le while
@@ -110,10 +151,10 @@ namespace Machine_bonbon
                     }
                     else if (sommeRecu < bonbon.Price && coin != 0)
                     {
-                        
-                        coin = GetCoin(input, select, bonbon);
-                        sommeRecu = sommeRecu+coin;
                         Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                        sommeRecu = sommeRecu+coin;
+                        coin = GetCoin(input, select, bonbon, sommeRecu);
+                        //Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
                     }
                     else
                     {
@@ -125,7 +166,7 @@ namespace Machine_bonbon
                 //sommeRecu += coin;
                 //Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
                 
-            } while (sommeRecu < bonbon.Price);
+            } while (sommeRecu < bonbon.Price);*/
             /*do
             {
                 coin = GetCoin();
