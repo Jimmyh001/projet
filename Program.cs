@@ -103,8 +103,8 @@ namespace Machine_bonbon
                     Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
                     if (coin == 0)
                     {
-                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
-                        isCanceled = true;
+                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu, returned:sommeRecu);
+                        break;
                         /*coin = GetCoin(input, select, bonbon, sommeRecu);
                         sommeRecu = sommeRecu + coin;
                         Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
