@@ -72,65 +72,71 @@ namespace Machine_bonbon
         static void Main(string[] args)
         {
             Candy[] candies = LoadCandies(); //Declaration d'un tableau de type Candy qui contient tous les donnees des bonbons fichier.data
-            Board.Print();
-            int select = GetSelection();
-            Candy bonbon = GetCandy(select, candies);
-            while (bonbon.Stock >= 0)
-            {
-                if (bonbon.Stock == 0)
-                {
-                    Board.Print(message:candies[select].Name + " VIDE", select+1, bonbon.Price);
-                    select = GetSelection();
-                    bonbon = GetCandy(select, candies);
-                }
-                else
-                {
-                    Board.Print(candies[select].Name, select+1, bonbon.Price);
-                    break;
-                }
-            }
-            Console.WriteLine("Bravo!");
-            decimal coin = 0, sommeRecu=0;
-            bool isCompleted =true, isCanceled=true;
-            int input=0;
-            //coin = GetCoin(input, select, bonbon, sommeRecu);
             while (true)
             {
-                coin = GetCoin(input, select, bonbon, sommeRecu);
-                sommeRecu = sommeRecu + coin;
-                Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
-                if (coin == 0)
+                Board.Print();
+                int select = GetSelection();
+                Candy bonbon = GetCandy(select, candies);
+                while (bonbon.Stock >= 0)
                 {
-                    Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
-                    isCanceled = true;
-                    /*coin = GetCoin(input, select, bonbon, sommeRecu);
+                    if (bonbon.Stock == 0)
+                    {
+                        Board.Print(message:candies[select].Name + " VIDE", select+1, bonbon.Price);
+                        select = GetSelection();
+                        bonbon = GetCandy(select, candies);
+                    }
+                    else
+                    {
+                        Board.Print(candies[select].Name, select+1, bonbon.Price);
+                        break;
+                    }
+                }
+                Console.WriteLine("Bravo!");
+                decimal coin = 0, sommeRecu=0;
+                bool isCompleted =true, isCanceled=true;
+                int input=0;
+                //coin = GetCoin(input, select, bonbon, sommeRecu);
+                while (true)
+                {
+                    coin = GetCoin(input, select, bonbon, sommeRecu);
                     sommeRecu = sommeRecu + coin;
                     Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
-                    */
+                    if (coin == 0)
+                    {
+                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
+                        isCanceled = true;
+                        /*coin = GetCoin(input, select, bonbon, sommeRecu);
+                        sommeRecu = sommeRecu + coin;
+                        Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price));
+                        */
+                    }
+                    else if (sommeRecu < bonbon.Price)
+                    {
+                        /*coin = GetCoin(input, select, bonbon, sommeRecu);
+                        sommeRecu = sommeRecu + coin;*/
+                        Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
+                        
+                    }
+                    else if (sommeRecu >= bonbon.Price)
+                    {
+                        Board.Print("PRENNEZ VOTRE FRIANDISE...", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price), result:candies[select].Name);
+                        bonbon.Stock--;
+                        isCompleted = true;
+                        break;
+                    }
+                    /*else if (coin == 0)
+                    {
+                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
+                        isCanceled = true;
+                    }*/
                 }
-                else if (sommeRecu < bonbon.Price)
-                {
-                    /*coin = GetCoin(input, select, bonbon, sommeRecu);
-                    sommeRecu = sommeRecu + coin;*/
-                    Board.Print(candies[select].Name, select+1, bonbon.Price, received:sommeRecu);
-                    
-                }
-                else if (sommeRecu >= bonbon.Price)
-                {
-                    Board.Print("PRENNEZ VOTRE FRIANDISE...", select+1, bonbon.Price, received:sommeRecu, returned:(sommeRecu-bonbon.Price), result:candies[select].Name);
-                    bonbon.Stock--;
-                    isCompleted = true;
-                    break;
-                }
-                /*else if (coin == 0)
-                {
-                    Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
-                    isCanceled = true;
-                }*/
-            }
 
-            Console.WriteLine("BRAVO");
-            Console.ReadKey()
+                Console.WriteLine("Appuyer sur une touche pour recommencer");
+                Console.ReadKey();
+
+
+
+            }
             
             
             /*do
