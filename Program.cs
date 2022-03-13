@@ -91,7 +91,7 @@ namespace Machine_bonbon
                         break;
                     }
                 }
-                Console.WriteLine("Bravo!");
+                //Console.WriteLine("Bravo!");
                 decimal coin = 0, sommeRecu=0;
                 bool isCompleted =true, isCanceled=true;
                 int input=0;
@@ -124,17 +124,11 @@ namespace Machine_bonbon
                         isCompleted = true;
                         break;
                     }
-                    /*else if (coin == 0)
-                    {
-                        Board.Print(message:"ANNULEE", select+1, bonbon.Price, received:sommeRecu);
-                        isCanceled = true;
-                    }*/
+                    
                 }
 
                 Console.WriteLine("Appuyer sur une touche pour recommencer");
                 Console.ReadKey();
-
-
 
             }
             
