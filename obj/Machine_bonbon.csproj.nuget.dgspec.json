@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/jimmy/Documents/Developpement_logiciel/GitKraken/projet/Machine_bonbon.csproj": {}
+    "/home/jimmy/Documents/GitKraken/projet/Machine_bonbon.csproj": {}
   },
   "projects": {
-    "/home/jimmy/Documents/Developpement_logiciel/GitKraken/projet/Machine_bonbon.csproj": {
+    "/home/jimmy/Documents/GitKraken/projet/Machine_bonbon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jimmy/Documents/Developpement_logiciel/GitKraken/projet/Machine_bonbon.csproj",
+        "projectUniqueName": "/home/jimmy/Documents/GitKraken/projet/Machine_bonbon.csproj",
         "projectName": "Machine_bonbon",
-        "projectPath": "/home/jimmy/Documents/Developpement_logiciel/GitKraken/projet/Machine_bonbon.csproj",
+        "projectPath": "/home/jimmy/Documents/GitKraken/projet/Machine_bonbon.csproj",
         "packagesPath": "/home/jimmy/.nuget/packages/",
-        "outputPath": "/home/jimmy/Documents/Developpement_logiciel/GitKraken/projet/obj/",
+        "outputPath": "/home/jimmy/Documents/GitKraken/projet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jimmy/.nuget/NuGet/NuGet.Config"
