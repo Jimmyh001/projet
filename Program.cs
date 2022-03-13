@@ -48,7 +48,8 @@ namespace Machine_bonbon
             {
                 Console.Write($"[0] = Annuler\n[1] = 5c\n[2] = 10c\n[3] = 25c\n[4] = 1$\n[5] = 2$\n->");
                 input = int.Parse(Console.ReadLine());
-            } while (input < 0 || input > 5);
+            } while ((input < 0 || input > 5) && bonbon.Stock > 0);
+            
             Board.Print(bonbon.Name, select+1, bonbon.Price);
             switch(input)
             {
